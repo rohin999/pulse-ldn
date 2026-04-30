@@ -17,13 +17,11 @@ AddType image/x-icon          .ico
 # ── Cache headers ─────────────────────────────────────────────────────────────
 <IfModule mod_expires.c>
   ExpiresActive On
-  # HTML — short cache so updates go live quickly
-  ExpiresByType text/html             "access plus 1 hour"
-  # Versioned assets (style.css?v=4, app.js?v=2) — long cache is fine
-  ExpiresByType text/css              "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  # Data file updated on each fetch_data.py run
-  ExpiresByType application/json      "access plus 1 hour"
+  # No caching — always serve fresh
+  ExpiresByType text/html             "access plus 0 seconds"
+  ExpiresByType text/css              "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
+  ExpiresByType application/json      "access plus 0 seconds"
   # Images and fonts
   ExpiresByType image/svg+xml         "access plus 1 year"
   ExpiresByType image/webp            "access plus 1 year"
@@ -35,6 +33,11 @@ AddType image/x-icon          .ico
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Force fresh fetch for HTML, CSS, JS, JSON
+  <FilesMatch "\.(html|css|js|json)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+    Header set Pragma "no-cache"
+  </FilesMatch>
 </IfModule>
 
 # ── Custom 404 ────────────────────────────────────────────────────────────────
