@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse LDN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html" class="active">Events</a>
+      <a href="djs.html">DJs</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <h1 class="hero-title">Pulse LDN</h1>
+      <p class="hero-sub">
+        <span id="heroEventCount">—</span> upcoming events · <span id="heroDjCount">—</span> DJs tracked<span id="heroUpdated"></span> · London only
+      </p>
+    </section>
+
+    <!-- Filter bar -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="searchDJ">DJ</label>
+        <input
+          type="text"
+          id="searchDJ"
+          placeholder="Search DJ name…"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <div class="filter-group">
+        <label for="filterVenue">Venue</label>
+        <select id="filterVenue">
+          <option value="">All venues</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="dateFrom">From</label>
+        <input type="date" id="dateFrom" />
+      </div>
+
+      <div class="filter-group">
+        <label for="dateTo">To</label>
+        <input type="date" id="dateTo" />
+      </div>
+
+      <div class="weekend-btns">
+        <span class="weekend-btns-label">Quick select</span>
+        <div class="weekend-btns-row">
+          <button class="weekend-btn" id="thisWeekend">This weekend</button>
+          <button class="weekend-btn" id="nextWeekend">Next weekend</button>
+        </div>
+      </div>
+
+      <button class="clear-btn" id="clearFilters">Clear all filters</button>
+    </div>
+
+    <!-- Results count -->
+    <div class="results-meta" id="resultsMeta"></div>
+
+    <!-- Event table -->
+    <div class="table-wrapper">
+      <table id="eventsTable">
+        <thead>
+          <tr>
+            <th class="col-date" data-sort="date">Date</th>
+            <th class="col-event" data-sort="event">Event</th>
+            <th class="col-venue" data-sort="venue">Venue</th>
+            <th class="col-djs">Lineup</th>
+            <th class="col-tickets"></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr class="loading-row">
+            <td colspan="5">Loading events…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile cards (shown at ≤700px instead of table) -->
+    <div id="mobileCards" class="mobile-cards"></div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" hidden>
+      <p>No events found.</p>
+      <button class="clear-btn" id="clearFiltersEmpty">Clear all filters</button>
+    </div>
+  </main>
+
+  <script src="data/events.js"></script>
+  <script src="app.js?v=2"></script>
+</body>
+</html>

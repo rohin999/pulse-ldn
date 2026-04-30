@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJs — Pulse LDN</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Events</a>
+      <a href="djs.html" class="active">DJs</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <h2>DJs we track</h2>
+      <p id="djCount">Loading…</p>
+    </div>
+
+    <div class="dj-grid" id="djGrid">
+      <!-- Populated by JS -->
+    </div>
+
+    <div class="section-title">Request a DJ</div>
+    <div class="request-section">
+      <h3>Missing someone?</h3>
+      <p>If there's a DJ you'd like to see tracked here, drop their name and Resident Advisor link below and we'll add them to the next update.</p>
+      <form class="request-form" id="requestForm">
+        <input type="text" id="reqName" placeholder="DJ name" required />
+        <input type="url" id="reqUrl" placeholder="https://ra.co/dj/…" required />
+        <textarea id="reqNote" rows="3" placeholder="Anything else? (optional)"></textarea>
+        <button type="submit" class="submit-btn">Send request</button>
+      </form>
+      <p id="requestConfirm" style="display:none; margin-top:1rem; font-size:0.85rem; color:var(--accent);">
+        Thanks! We'll review your request.
+      </p>
+    </div>
+  </main>
+
+  <script src="data/events.js"></script>
+  <script>
+    const DATA_URL = 'data/events.json';
+
+    // Hardcoded DJ list as fallback (matches fetch_data.py DJ_LIST)
+    const DJ_LIST = [
+      { name: "Mura Masa",       slug: "muramasa" },
+      { name: "&ME",             slug: "me" },
+      { name: "Adam Port",       slug: "adamport" },
+      { name: "Rampa",           slug: "rampa" },
+      { name: "Berlioz",         slug: "berlioz" },
+      { name: "Maz",             slug: "mazbr" },
+      { name: "Samm",            slug: "sammbe" },
+      { name: "Ajna",            slug: "ajna" },
+      { name: "DESIREE",         slug: "desiree-rsa" },
+      { name: "Black Coffee",    slug: "blackcoffee" },
+      { name: "Mahmut Orhan",    slug: "mahmutorhan" },
+      { name: "Ankhoi",          slug: "ankhoi" },
+      { name: "John Summit",     slug: "johnsummit" },
+      { name: "Peggy Gou",       slug: "peggygou" },
+      { name: "Adriatique",      slug: "adriatique" },
+      { name: "Marten Lou",      slug: "martenlou" },
+      { name: "Caiiro",          slug: "caiiro" },
+      { name: "DaCapo",          slug: "dacapo" },
+      { name: "Shimza",          slug: "shimza" },
+      { name: "Zakes Bantwini",  slug: "zakesbantwini" },
+      { name: "Jan Blomqvist",   slug: "janblomqvist" },
+      { name: "WhoMadeWho",      slug: "whomadewho" },
+      { name: "Ben Böhmer",      slug: "benbohmer" },
+      { name: "Jimi Jules",      slug: "jimijules" },
+      { name: "Artbat",          slug: "artbat" },
+      { name: "Vintage Culture", slug: "vintageculture" },
+      { name: "RÜFÜS DU SOL",   slug: "rufusdusol" },
+      { name: "Disclosure",      slug: "disclosure" },
+      { name: "Solomun",         slug: "solomun" },
+      { name: "CamelPhat",       slug: "camelphat" },
+      { name: "Antdot",          slug: "antdot" },
+      { name: "Alex Wann",       slug: "alexwann" },
+      { name: "Bedouin",         slug: "bedouin" },
+      { name: "Enoo Napa",       slug: "enoonapa" },
+    ];
+
+    async function init() {
+      const grid = document.getElementById('djGrid');
+      const countEl = document.getElementById('djCount');
+
+      // Try to use the djs array from JSON; fall back to hardcoded list
+      let djs = DJ_LIST;
+      try {
+        let data = null;
+        if (window.LONDON_NIGHTS_DATA) {
+          data = window.LONDON_NIGHTS_DATA;
+        } else {
+          const res = await fetch(DATA_URL);
+          if (res.ok) data = await res.json();
+        }
+        if (data && data.djs && data.djs.length > 0) djs = data.djs;
+      } catch (_) {}
+
+      const sorted = [...djs].sort((a, b) => a.name.localeCompare(b.name));
+      countEl.textContent = `${sorted.length} DJs tracked across London`;
+
+      grid.innerHTML = sorted.map(dj => `
+        <a class="dj-card" href="dj.html?slug=${encodeURIComponent(dj.slug)}">
+          <div class="dj-card-name">${escHtml(dj.name)}</div>
+          <div class="dj-card-meta">ra.co/dj/${escHtml(dj.slug)}</div>
+        </a>
+      `).join('');
+    }
+
+    function escHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // Request form — just stores locally and shows confirm for now
+    document.getElementById('requestForm').addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('requestForm').style.display = 'none';
+      document.getElementById('requestConfirm').style.display = 'block';
+    });
+
+    init();
+  </script>
+</body>
+</html>
+

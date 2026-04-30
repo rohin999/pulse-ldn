@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DJ — Pulse LDN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <script src="theme.js"></script>
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+  </div>
+  <nav>
+    <div class="nav-links">
+      <a href="index.html">Events</a>
+      <a href="djs.html">DJs</a>
+    </div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode"></button>
+  </nav>
+
+  <main>
+    <a href="djs.html" class="back-link">← All DJs</a>
+    <div id="profileContainer">
+      <p style="color:var(--text-muted)">Loading…</p>
+    </div>
+  </main>
+
+  <script src="data/events.js"></script>
+  <script>
+    const DATA_URL = 'data/events.json';
+    const DAYS   = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    function escHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function toIsoDate(d) {
+      return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    }
+
+    function formatDate(isoDate) {
+      const [y, m, d] = isoDate.split('-').map(Number);
+      const jsDate = new Date(y, m - 1, d);
+      const day = jsDate.getDay();
+      return {
+        dayName: DAYS[day],
+        display: `${d} ${MONTHS[m - 1]}`,
+        isWeekend: day === 0 || day === 5 || day === 6,
+      };
+    }
+
+    function safeUrl(url) {
+      if (!url) return '';
+      try {
+        const u = new URL(url);
+        return (u.protocol === 'https:' || u.protocol === 'http:') ? url : '';
+      } catch { return ''; }
+    }
+
+    function socialLink(href, label) {
+      const safe = safeUrl(href);
+      if (!safe) return '';
+      return `<a class="social-link" href="${escHtml(safe)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    }
+
+    async function init() {
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('slug');
+      const container = document.getElementById('profileContainer');
+
+      if (!slug) {
+        container.innerHTML = '<p style="color:var(--text-muted)">No DJ specified.</p>';
+        return;
+      }
+
+      let data;
+      try {
+        if (window.LONDON_NIGHTS_DATA) {
+          data = window.LONDON_NIGHTS_DATA;
+        } else {
+          const res = await fetch(DATA_URL);
+          if (!res.ok) throw new Error();
+          data = await res.json();
+        }
+      } catch {
+        container.innerHTML = '<p style="color:var(--text-muted)">Could not load data.</p>';
+        return;
+      }
+
+      // Find DJ profile (from djs array, or build stub from events)
+      const djs = data.djs || [];
+      let dj = djs.find(d => d.slug === slug);
+
+      // Fallback: build a minimal stub from the events if no profile data yet
+      if (!dj) {
+        const ev = (data.events || []).find(e => e.djSlug === slug);
+        if (ev) {
+          dj = { name: ev.djName, slug: ev.djSlug, raUrl: ev.raUrl };
+        }
+      }
+
+      if (!dj) {
+        container.innerHTML = '<p style="color:var(--text-muted)">DJ not found.</p>';
+        return;
+      }
+
+      // Update page title
+      document.title = `${dj.name} — Pulse LDN`;
+
+      // Build socials
+      const socials = [
+        socialLink(dj.instagram, 'Instagram'),
+        socialLink(dj.soundcloud, 'SoundCloud'),
+        socialLink(dj.bandcamp, 'Bandcamp'),
+        socialLink(dj.facebook, 'Facebook'),
+        socialLink(dj.twitter, 'Twitter'),
+        socialLink(dj.website, 'Website'),
+        socialLink(dj.raUrl || `https://ra.co/dj/${slug}`, 'Resident Advisor'),
+      ].filter(Boolean).join('');
+
+      // Upcoming events for this DJ (future only)
+      const today = toIsoDate(new Date());
+      const events = (data.events || [])
+        .filter(e => e.djSlug === slug && e.date >= today)
+        .sort((a, b) => a.date.localeCompare(b.date));
+
+      const eventsHtml = events.length > 0
+        ? `<div class="section-title">Upcoming London events</div>
+           <div class="table-wrapper">
+             <table>
+               <thead>
+                 <tr>
+                   <th class="col-date">Date</th>
+                   <th class="col-event">Event</th>
+                   <th class="col-venue">Venue</th>
+                   <th class="col-tickets"></th>
+                 </tr>
+               </thead>
+               <tbody>
+                 ${events.map(ev => {
+                   const { dayName, display, isWeekend } = formatDate(ev.date);
+                   return `
+                   <tr${isWeekend ? ' class="is-weekend"' : ''}>
+                     <td>
+                       <div class="date-cell">
+                         <span class="date-day">${escHtml(dayName)}</span>
+                         <span class="date-full">${escHtml(display)}</span>
+                       </div>
+                     </td>
+                     <td><span class="event-title">${escHtml(ev.eventTitle)}</span></td>
+                     <td><span class="venue-name">${escHtml(ev.venue)}</span></td>
+                     <td style="text-align:right">${ev.ticketUrl
+                       ? `<a class="ticket-link" href="${escHtml(safeUrl(ev.ticketUrl))}" target="_blank" rel="noopener noreferrer">View event →</a>`
+                       : '<span class="no-tickets">—</span>'}</td>
+                   </tr>`;
+                 }).join('')}
+               </tbody>
+             </table>
+           </div>
+           <div class="mobile-cards">
+             ${events.map(ev => {
+               const { dayName, display, isWeekend } = formatDate(ev.date);
+               return `
+               <div class="event-card">
+                 <div class="event-card-date${isWeekend ? ' is-weekend' : ''}">${escHtml(dayName)} · ${escHtml(display)}</div>
+                 <div class="event-card-title">${escHtml(ev.eventTitle)}</div>
+                 <div class="event-card-venue">${escHtml(ev.venue)}</div>
+                 ${ev.ticketUrl ? `<div class="event-card-footer"><a class="ticket-link" href="${escHtml(safeUrl(ev.ticketUrl))}" target="_blank" rel="noopener noreferrer">View event →</a></div>` : ''}
+               </div>`;
+             }).join('')}
+           </div>`
+        : `<div class="section-title">Upcoming London events</div>
+           <p style="color:var(--text-muted); font-size:0.875rem;">No upcoming London events found.</p>`;
+
+      container.innerHTML = `
+        <div class="dj-profile">
+          <div class="dj-profile-header">
+            <div class="dj-profile-name">${escHtml(dj.name)}</div>
+            ${dj.blurb ? `<p class="dj-profile-blurb">${escHtml(dj.blurb)}</p>` : ''}
+            ${socials ? `<div class="dj-socials">${socials}</div>` : ''}
+          </div>
+          ${dj.bio ? `<div class="dj-profile-bio">${escHtml(dj.bio)}</div>` : ''}
+          ${eventsHtml}
+        </div>
+      `;
+    }
+
+    init();
+  </script>
+</body>
+</html>
