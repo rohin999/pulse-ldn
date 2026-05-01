@@ -56,6 +56,30 @@
       .to('.hero-sub',   { opacity: 1, y: 0, duration: DUR,  ease: EASE_ENTER,   overwrite: 'auto' }, '-=0.3')
       .to('.filters',    { opacity: 1, y: 0, duration: DUR,  ease: EASE_ENTER,   overwrite: 'auto' }, '-=0.25');
 
+    // ── Hero scroll shrink ────────────────────────────────────────────────────
+    gsap.set('.nav-mini-title', { opacity: 0 });
+
+    // Scrubbed: hero compresses as you scroll
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top+=52',
+        end: 'bottom top+=52',
+        scrub: 0.8,
+      }
+    })
+    .to('.hero-title', { scale: 0.55, opacity: 0, transformOrigin: 'center center', ease: 'none' }, 0)
+    .to('.hero-sub',   { opacity: 0, ease: 'none' }, 0)
+    .to('.hero',       { paddingTop: '0.4rem', paddingBottom: '0.4rem', ease: 'none' }, 0);
+
+    // Nav mini-title fades in once hero is fully scrolled past
+    ScrollTrigger.create({
+      trigger: '.hero',
+      start: 'bottom top+=52',
+      onEnter:     () => gsap.to('.nav-mini-title', { opacity: 1, duration: 0.25 }),
+      onLeaveBack: () => gsap.to('.nav-mini-title', { opacity: 0, duration: 0.2  }),
+    });
+
     // Called by app.js renderTable() after each DOM injection
     window.animateFeedItems = function () {
       const rows  = gsap.utils.toArray('#tableBody tr:not(.loading-row)');

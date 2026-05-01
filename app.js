@@ -237,6 +237,12 @@ function renderTable(events) {
 }
 
 // ─── Filter logic ─────────────────────────────────────────────────────────────
+function updateFilterBadge() {
+  const count = [filters.dj, filters.venue, filters.from, filters.to].filter(Boolean).length;
+  const el = document.querySelector('.filter-count');
+  if (el) el.textContent = count > 0 ? ` (${count})` : '';
+}
+
 function applyFilters() {
   const { dj, venue, from, to } = filters;
   const filtered = allEvents.filter(ev => {
@@ -246,6 +252,7 @@ function applyFilters() {
     if (to   && ev.date > to)   return false;
     return true;
   });
+  updateFilterBadge();
   renderTable(filtered);
 }
 
@@ -308,6 +315,16 @@ dateTo.addEventListener('change', () => {
 
 clearBtn.addEventListener('click', clearAllFilters);
 clearBtnEmpty.addEventListener('click', clearAllFilters);
+
+// Filter toggle (mobile)
+const filterToggle = document.getElementById('filterToggle');
+if (filterToggle) {
+  filterToggle.addEventListener('click', () => {
+    const panel = document.getElementById('filtersPanel');
+    const open = panel.classList.toggle('is-open');
+    filterToggle.setAttribute('aria-expanded', open);
+  });
+}
 thisWeekendBtn.addEventListener('click', () => setWeekendFilter(0, thisWeekendBtn));
 nextWeekendBtn.addEventListener('click', () => setWeekendFilter(1, nextWeekendBtn));
 
