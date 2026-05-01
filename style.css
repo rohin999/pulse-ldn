@@ -792,12 +792,17 @@ a.dj-pill:hover {
     flex-direction: column;
     gap: 0.75rem;
     width: 100%;
+    box-sizing: border-box;
     padding: 0 1.25rem 1.25rem;
   }
 
   .filters.is-open .filter-body { display: flex; }
 
-  #searchDJ, #filterVenue, #dateFrom, #dateTo { width: 100%; }
+  #searchDJ, #filterVenue, #dateFrom, #dateTo {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .filter-group { width: 100%; }
   .weekend-btns { width: 100%; }
   .weekend-btns-row { width: 100%; }
