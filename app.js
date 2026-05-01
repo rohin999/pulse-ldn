@@ -211,6 +211,11 @@ function renderTable(events) {
       applyFilters();
     });
   });
+
+  // Entrance animations for newly injected rows/cards
+  if (typeof window.animateFeedItems === 'function') {
+    window.animateFeedItems();
+  }
 }
 
 // ─── Filter logic ─────────────────────────────────────────────────────────────
