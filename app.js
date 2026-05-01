@@ -92,7 +92,7 @@ function dedupEvents(events) {
     if (map.has(key)) {
       const existing = map.get(key);
       for (const dj of (ev.otherDJs || [])) {
-        if (!existing.otherDJs.includes(dj)) existing.otherDJs.push(dj);
+        if (!existing.otherDJs.some(d => d.toLowerCase() === dj.toLowerCase())) existing.otherDJs.push(dj);
       }
     } else {
       map.set(key, { ...ev, otherDJs: [...(ev.otherDJs || [])] });
@@ -158,7 +158,7 @@ function renderTable(events) {
   tableBody.innerHTML = sorted.map(ev => {
     const { dayName, display, isWeekend } = formatDate(ev.date);
     const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
-    const uniqueLineup = [...new Set(lineup)];
+    const uniqueLineup = lineup.filter((dj, i) => lineup.findIndex(d => d.toLowerCase() === dj.toLowerCase()) === i);
     const pillsHtml = uniqueLineup.map(makePill).join('');
 
     const eventHtml = ev.ticketUrl
@@ -185,7 +185,7 @@ function renderTable(events) {
     mobileCards.innerHTML = sorted.map(ev => {
       const { dayName, display, isWeekend } = formatDate(ev.date);
       const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
-      const uniqueLineup = [...new Set(lineup)];
+      const uniqueLineup = lineup.filter((dj, i) => lineup.findIndex(d => d.toLowerCase() === dj.toLowerCase()) === i);
       const pillsHtml = uniqueLineup.map(makePill).join('');
 
       const footerHtml = ev.ticketUrl
