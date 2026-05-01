@@ -85,6 +85,24 @@ function safeUrl(url) {
   }
 }
 
+/** Deduplicate a lineup array:
+ *  1. Case-insensitive exact match — keep first occurrence
+ *  2. Prefix match — if "Samm" and "Samm (BE)" both appear, drop the shorter one */
+function dedupeLineup(lineup) {
+  // Pass 1: case-insensitive exact dedup
+  const step1 = lineup.filter((dj, i) =>
+    lineup.findIndex(d => d.toLowerCase() === dj.toLowerCase()) === i
+  );
+  // Pass 2: drop any name that is a prefix of a longer name in the list
+  return step1.filter(dj => {
+    const lower = dj.toLowerCase();
+    return !step1.some(other => {
+      const o = other.toLowerCase();
+      return o !== lower && o.startsWith(lower);
+    });
+  });
+}
+
 function dedupEvents(events) {
   const map = new Map();
   for (const ev of events) {
@@ -158,7 +176,7 @@ function renderTable(events) {
   tableBody.innerHTML = sorted.map(ev => {
     const { dayName, display, isWeekend } = formatDate(ev.date);
     const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
-    const uniqueLineup = lineup.filter((dj, i) => lineup.findIndex(d => d.toLowerCase() === dj.toLowerCase()) === i);
+    const uniqueLineup = dedupeLineup(lineup);
     const pillsHtml = uniqueLineup.map(makePill).join('');
 
     const eventHtml = ev.ticketUrl
@@ -185,7 +203,7 @@ function renderTable(events) {
     mobileCards.innerHTML = sorted.map(ev => {
       const { dayName, display, isWeekend } = formatDate(ev.date);
       const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
-      const uniqueLineup = lineup.filter((dj, i) => lineup.findIndex(d => d.toLowerCase() === dj.toLowerCase()) === i);
+      const uniqueLineup = dedupeLineup(lineup);
       const pillsHtml = uniqueLineup.map(makePill).join('');
 
       const footerHtml = ev.ticketUrl
