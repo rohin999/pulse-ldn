@@ -36,20 +36,9 @@
       <!-- Populated by JS -->
     </div>
 
-    <div class="section-title">Request a DJ</div>
-    <div class="request-section">
-      <h3>Missing someone?</h3>
-      <p>If there's a DJ you'd like to see tracked here, drop their name and Resident Advisor link below and we'll add them to the next update.</p>
-      <form class="request-form" id="requestForm">
-        <input type="text" id="reqName" placeholder="DJ name" required />
-        <input type="url" id="reqUrl" placeholder="https://ra.co/dj/…" required />
-        <textarea id="reqNote" rows="3" placeholder="Anything else? (optional)"></textarea>
-        <button type="submit" class="submit-btn">Send request</button>
-      </form>
-      <p id="requestConfirm" style="display:none; margin-top:1rem; font-size:0.85rem; color:var(--accent);">
-        Thanks! We'll review your request.
-      </p>
-    </div>
+    <p style="text-align:center; margin-top:2.5rem; font-size:0.9rem; color:var(--text-muted);">
+      Missing someone? <a href="about.html" style="color:var(--accent);">Suggest a DJ →</a>
+    </p>
   </main>
 
   <script src="data/events.js"></script>
@@ -58,40 +47,66 @@
 
     // Hardcoded DJ list as fallback (matches fetch_data.py DJ_LIST)
     const DJ_LIST = [
-      { name: "Mura Masa",       slug: "muramasa" },
-      { name: "&ME",             slug: "me" },
-      { name: "Adam Port",       slug: "adamport" },
-      { name: "Rampa",           slug: "rampa" },
-      { name: "Berlioz",         slug: "berlioz" },
-      { name: "Maz",             slug: "mazbr" },
-      { name: "Samm",            slug: "sammbe" },
-      { name: "Ajna",            slug: "ajna" },
-      { name: "DESIREE",         slug: "desiree-rsa" },
-      { name: "Black Coffee",    slug: "blackcoffee" },
-      { name: "Mahmut Orhan",    slug: "mahmutorhan" },
-      { name: "Ankhoi",          slug: "ankhoi" },
-      { name: "John Summit",     slug: "johnsummit" },
-      { name: "Peggy Gou",       slug: "peggygou" },
-      { name: "Adriatique",      slug: "adriatique" },
-      { name: "Marten Lou",      slug: "martenlou" },
-      { name: "Caiiro",          slug: "caiiro" },
-      { name: "DaCapo",          slug: "dacapo" },
-      { name: "Shimza",          slug: "shimza" },
-      { name: "Zakes Bantwini",  slug: "zakesbantwini" },
-      { name: "Jan Blomqvist",   slug: "janblomqvist" },
-      { name: "WhoMadeWho",      slug: "whomadewho" },
-      { name: "Ben Böhmer",      slug: "benbohmer" },
-      { name: "Jimi Jules",      slug: "jimijules" },
-      { name: "Artbat",          slug: "artbat" },
-      { name: "Vintage Culture", slug: "vintageculture" },
-      { name: "RÜFÜS DU SOL",   slug: "rufusdusol" },
-      { name: "Disclosure",      slug: "disclosure" },
-      { name: "Solomun",         slug: "solomun" },
-      { name: "CamelPhat",       slug: "camelphat" },
-      { name: "Antdot",          slug: "antdot" },
-      { name: "Alex Wann",       slug: "alexwann" },
-      { name: "Bedouin",         slug: "bedouin" },
-      { name: "Enoo Napa",       slug: "enoonapa" },
+      { name: "Mura Masa",            slug: "muramasa" },
+      { name: "&ME",                  slug: "me" },
+      { name: "Adam Port",            slug: "adamport" },
+      { name: "Rampa",                slug: "rampa" },
+      { name: "Berlioz",              slug: "berlioz" },
+      { name: "Maz",                  slug: "mazbr" },
+      { name: "Samm",                 slug: "sammbe" },
+      { name: "Ajna",                 slug: "ajna" },
+      { name: "DESIREE",              slug: "desiree-rsa" },
+      { name: "Black Coffee",         slug: "blackcoffee" },
+      { name: "Mahmut Orhan",         slug: "mahmutorhan" },
+      { name: "Ankhoi",               slug: "ankhoi" },
+      { name: "John Summit",          slug: "johnsummit" },
+      { name: "Peggy Gou",            slug: "peggygou" },
+      { name: "Adriatique",           slug: "adriatique" },
+      { name: "Marten Lou",           slug: "martenlou" },
+      { name: "Caiiro",               slug: "caiiro" },
+      { name: "DaCapo",               slug: "dacapo" },
+      { name: "Shimza",               slug: "shimza" },
+      { name: "Zakes Bantwini",       slug: "zakesbantwini" },
+      { name: "Jan Blomqvist",        slug: "janblomqvist" },
+      { name: "WhoMadeWho",           slug: "whomadewho" },
+      { name: "Ben Böhmer",           slug: "benbohmer" },
+      { name: "Jimi Jules",           slug: "jimijules" },
+      { name: "Artbat",               slug: "artbat" },
+      { name: "Vintage Culture",      slug: "vintageculture" },
+      { name: "RÜFÜS DU SOL",        slug: "rufusdusol" },
+      { name: "Disclosure",           slug: "disclosure" },
+      { name: "Solomun",              slug: "solomun" },
+      { name: "CamelPhat",            slug: "camelphat" },
+      { name: "Antdot",               slug: "antdot" },
+      { name: "Alex Wann",            slug: "alexwann" },
+      { name: "Bedouin",              slug: "bedouin" },
+      { name: "Enoo Napa",            slug: "enoonapa" },
+      { name: "Acid Pauli",           slug: "acidpauli" },
+      { name: "Âme",                  slug: "ame" },
+      { name: "Carlita",              slug: "carlita" },
+      { name: "Eric Prydz",           slug: "ericprydz" },
+      { name: "Kasablanca",           slug: "kasablanca" },
+      { name: "Lane 8",               slug: "lane8" },
+      { name: "DJ Tennis",            slug: "djtennis" },
+      { name: "Michael Bibi",         slug: "michaelbibi" },
+      { name: "Mind Against",         slug: "mindagainst" },
+      { name: "Miss Monique",         slug: "missmonique" },
+      { name: "Monolink",             slug: "monolink" },
+      { name: "Sammy Virji",          slug: "sammyvirji" },
+      { name: "Seth Troxler",         slug: "sethtroxler" },
+      { name: "Dennis Cruz",          slug: "denniscruz" },
+      { name: "The Martinez Brothers",slug: "themartinezbros" },
+      { name: "Sparrow & Barbossa",   slug: "sparrowbarbossa" },
+      { name: "Boddhi Satva",         slug: "boddhisatva" },
+      { name: "Themba",               slug: "themba" },
+      { name: "FISHER",               slug: "fisheroz" },
+      { name: "Chris Lake",           slug: "chrislake" },
+      { name: "MK",                   slug: "marckinchen" },
+      { name: "Dixon",                slug: "dixon" },
+      { name: "Massano",              slug: "massano" },
+      { name: "PAWSA",                slug: "pawsa" },
+      { name: "ANOTR",                slug: "anotr" },
+      { name: "Elderbrook",           slug: "elderbrook" },
     ];
 
     async function init() {
@@ -108,7 +123,13 @@
           const res = await fetch(DATA_URL);
           if (res.ok) data = await res.json();
         }
-        if (data && data.djs && data.djs.length > 0) djs = data.djs;
+        if (data && data.djs && data.djs.length > 0) {
+          // Merge: prefer JSON profile data, but include any hardcoded DJ
+          // not yet in the JSON (i.e. added to fetch_data.py but data not refreshed)
+          const jsonSlugs = new Set(data.djs.map(d => d.slug));
+          const missing = DJ_LIST.filter(d => !jsonSlugs.has(d.slug));
+          djs = [...data.djs, ...missing];
+        }
       } catch (_) {}
 
       const sorted = [...djs].sort((a, b) => a.name.localeCompare(b.name));
@@ -132,13 +153,6 @@
         .replace(/&/g, '&amp;').replace(/</g, '&lt;')
         .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
-
-    // Request form — just stores locally and shows confirm for now
-    document.getElementById('requestForm').addEventListener('submit', e => {
-      e.preventDefault();
-      document.getElementById('requestForm').style.display = 'none';
-      document.getElementById('requestConfirm').style.display = 'block';
-    });
 
     init();
   </script>

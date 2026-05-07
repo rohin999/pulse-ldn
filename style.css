@@ -586,6 +586,63 @@ a.dj-pill:hover {
 }
 
 /* ─── About page ───────────────────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-main {
+  text-align: left;
+}
+
+.about-aside {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.support-card,
+.contact-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: background-color 0.25s;
+}
+
+.support-card h3,
+.contact-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.support-card p,
+.contact-card p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.support-btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  font-size: 0.8rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: not-allowed;
+}
+
 .about-block {
   margin-bottom: 2.5rem;
 }
@@ -614,6 +671,16 @@ a.dj-pill:hover {
 
 .linkedin-btn:hover {
   opacity: 0.85;
+}
+
+@media (max-width: 880px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-aside {
+    position: static;
+  }
 }
 
 /* ─── Request section (djs.html) ───────────────────────────────────────────── */
