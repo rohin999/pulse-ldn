@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="style.css?v=7" />
   <script src="theme.js"></script>
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
   <div class="bg-blobs" aria-hidden="true">
@@ -72,7 +73,10 @@
         <div class="support-card">
           <h3>Support this site</h3>
           <p>This costs ~£20 a month to run. Contribute to keep it going if you like it!</p>
-          <button class="support-btn" disabled>Stripe — coming soon</button>
+          <stripe-buy-button
+            buy-button-id="buy_btn_1TUWoPEKmdImYHkx97VffvHU"
+            publishable-key="pk_live_51TUWYhEKmdImYHkxPPdSYrr7RzmHdSrNA3oM87UBC1wHEC7L13ixj8qH4x8XZc9AERhn0wu43yWsTOGnQAnqMTa100xkGMgwpM"
+          ></stripe-buy-button>
         </div>
 
         <div class="contact-card">

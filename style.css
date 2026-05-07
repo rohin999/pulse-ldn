@@ -630,18 +630,6 @@ a.dj-pill:hover {
   margin: 0 0 1rem;
 }
 
-.support-btn {
-  display: inline-block;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px dashed var(--border);
-  font-size: 0.8rem;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: not-allowed;
-}
 
 .about-block {
   margin-bottom: 2.5rem;
