@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=11" />
   <script src="theme.js?v=10"></script>
 </head>
 <body>
@@ -83,19 +83,38 @@
         <div class="contact-card">
           <h3>Get in touch</h3>
           <p>Feedback? Want to add a DJ? Fancy a chat? Drop a note below.</p>
-          <form
-            action="https://formspree.io/f/mwvynvjv"
-            method="POST"
-            id="contactForm"
-            class="request-form"
-          >
-            <input type="text" name="name" placeholder="Your name (optional)" />
-            <input type="email" name="email" placeholder="Email" required />
-            <textarea name="message" rows="4" placeholder="Message" required></textarea>
-            <button type="submit" class="submit-btn">Send</button>
-          </form>
-          <p id="contactConfirm" hidden>Thanks — got it. I'll be in touch.</p>
-          <p id="contactError" hidden style="color:var(--accent); font-size:0.85rem; margin-top:0.75rem;">
+          <div class="contact-form-wrapper" id="contactWrapper">
+            <form
+              action="https://formspree.io/f/mwvynvjv"
+              method="POST"
+              id="contactForm"
+              class="request-form"
+            >
+              <input type="text" name="name" placeholder="Your name (optional)" />
+              <input type="email" name="email" placeholder="Email" required />
+              <textarea name="message" rows="4" placeholder="Message" required></textarea>
+              <button type="submit" class="submit-btn" id="contactSubmit">
+                <span class="btn-label">Send</span>
+                <span class="btn-dots" aria-hidden="true">
+                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                </span>
+                <span class="btn-check" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8.5l3.2 3.2L13 5"/>
+                  </svg>
+                </span>
+              </button>
+            </form>
+            <div class="contact-confirm" id="contactConfirm" hidden>
+              <div class="confirm-tick" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12.5l4.5 4.5L19 7"/>
+                </svg>
+              </div>
+              <p>Thanks — message received. I'll be in touch.</p>
+            </div>
+          </div>
+          <p id="contactError" class="contact-error" hidden>
             Something went wrong. Try emailing instead.
           </p>
         </div>
@@ -104,36 +123,63 @@
   </main>
 
   <script>
-    const form = document.getElementById('contactForm');
-    const confirmEl = document.getElementById('contactConfirm');
-    const errorEl = document.getElementById('contactError');
+    (() => {
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('contactSubmit');
+      const btnLabel = submitBtn.querySelector('.btn-label');
+      const confirmEl = document.getElementById('contactConfirm');
+      const errorEl = document.getElementById('contactError');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      errorEl.hidden = true;
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalLabel = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
+      const SUCCESS_HOLD_MS = reduceMotion ? 0 : 700;
 
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' },
-        });
-        if (res.ok) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (submitBtn.disabled) return;
+
+        errorEl.hidden = true;
+        submitBtn.classList.remove('is-error');
+        submitBtn.classList.add('is-sending');
+        submitBtn.disabled = true;
+        btnLabel.textContent = 'Sending';
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' },
+          });
+          if (!res.ok) throw new Error('Bad response');
+
+          // Success — swap to "Sent ✓"
+          submitBtn.classList.remove('is-sending');
+          submitBtn.classList.add('is-success');
+          btnLabel.textContent = 'Sent';
+
+          // Hold the success state briefly, then crossfade form → confirm
+          await wait(SUCCESS_HOLD_MS);
+          form.classList.add('is-leaving');
+          await wait(reduceMotion ? 0 : 280);
           form.hidden = true;
           confirmEl.hidden = false;
-        } else {
-          throw new Error('Bad response');
+          // Force reflow so the entrance transition fires
+          void confirmEl.offsetWidth;
+          confirmEl.classList.add('is-visible');
+        } catch (_) {
+          submitBtn.classList.remove('is-sending');
+          submitBtn.classList.add('is-error');
+          btnLabel.textContent = 'Send';
+          submitBtn.disabled = false;
+          errorEl.hidden = false;
+          // Strip the error class after the shake plays so it can re-trigger
+          setTimeout(() => submitBtn.classList.remove('is-error'), 600);
         }
-      } catch (_) {
-        errorEl.hidden = false;
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalLabel;
+      });
+
+      function wait(ms) {
+        return new Promise(r => setTimeout(r, ms));
       }
-    });
+    })();
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>

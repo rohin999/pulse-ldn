@@ -1,6 +1,9 @@
 /* ─── Reset & base ─────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Ensure [hidden] always wins over component display rules */
+[hidden] { display: none !important; }
+
 :root {
   --bg:           #FAF8F3;
   --surface:      #F2EDE4;
@@ -747,7 +750,9 @@ a.dj-pill:hover {
 .request-form textarea::placeholder { color: var(--text-dim); }
 
 .submit-btn {
+  position: relative;
   height: 38px;
+  min-width: 110px;
   padding: 0 1.25rem;
   background: var(--accent);
   border: none;
@@ -758,10 +763,173 @@ a.dj-pill:hover {
   font-weight: 600;
   cursor: pointer;
   align-self: flex-start;
-  transition: opacity 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  overflow: hidden;
+  transition: opacity 0.18s ease, transform 0.18s ease, background-color 0.25s ease;
 }
 
-.submit-btn:hover { opacity: 0.85; }
+.submit-btn:hover { opacity: 0.9; }
+
+.submit-btn:disabled { cursor: default; }
+
+.submit-btn .btn-label {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Three-dot sending indicator */
+.submit-btn .btn-dots {
+  display: none;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+}
+
+.submit-btn .btn-dots .dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: dot-pulse 1s infinite ease-in-out;
+}
+
+.submit-btn .btn-dots .dot:nth-child(2) { animation-delay: 0.15s; }
+.submit-btn .btn-dots .dot:nth-child(3) { animation-delay: 0.3s; }
+
+/* Check icon — only visible in success state */
+.submit-btn .btn-check {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50%      { opacity: 1;    transform: translateY(-1px); }
+}
+
+/* Sending state */
+.submit-btn.is-sending {
+  opacity: 0.92;
+  transform: scale(0.98);
+}
+.submit-btn.is-sending .btn-dots { display: inline-flex; }
+
+/* Success state */
+.submit-btn.is-success {
+  background: #1f7a4a; /* soft confirmation green */
+  animation: pop-success 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.submit-btn.is-success .btn-dots { display: none; }
+.submit-btn.is-success .btn-check { display: inline-flex; }
+
+@keyframes pop-success {
+  0%   { transform: scale(0.98); }
+  55%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+/* Error state — gentle horizontal shake */
+.submit-btn.is-error {
+  animation: btn-shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes btn-shake {
+  0%, 100%       { transform: translateX(0); }
+  15%            { transform: translateX(-5px); }
+  30%, 60%       { transform: translateX(4px); }
+  45%, 75%       { transform: translateX(-3px); }
+  90%            { transform: translateX(2px); }
+}
+
+/* Form / confirmation crossfade */
+.contact-form-wrapper {
+  position: relative;
+}
+
+.request-form {
+  transition: opacity 0.28s ease, transform 0.28s ease, max-height 0.32s ease;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.request-form.is-leaving {
+  opacity: 0;
+  transform: translateY(-8px);
+  max-height: 0;
+  pointer-events: none;
+}
+
+.contact-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(31, 122, 74, 0.08);
+  border: 1px solid rgba(31, 122, 74, 0.2);
+  color: var(--text);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.contact-confirm.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-confirm p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.confirm-tick {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #1f7a4a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: tick-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes tick-in {
+  0%   { transform: scale(0); opacity: 0; }
+  60%  { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Error message under the form */
+.contact-error {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .submit-btn,
+  .submit-btn .btn-label,
+  .submit-btn.is-success,
+  .submit-btn.is-error,
+  .submit-btn .btn-dots .dot,
+  .request-form,
+  .contact-confirm,
+  .confirm-tick {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 
 /* ─── DJ Profile (dj.html) ─────────────────────────────────────────────────── */
 .dj-profile {
