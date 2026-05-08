@@ -718,30 +718,6 @@ a.dj-pill:hover {
   }
 }
 
-/* ─── Request section (djs.html) ───────────────────────────────────────────── */
-.request-section {
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  max-width: 560px;
-  transition: background-color 0.25s;
-}
-
-.request-section h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.5rem;
-}
-
-.request-section p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
-}
-
 .request-form {
   display: flex;
   flex-direction: column;

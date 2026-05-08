@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=9" />
   <script src="theme.js"></script>
 </head>
 <body>
@@ -60,7 +60,7 @@
       return {
         dayName: DAYS[day],
         display: `${d} ${MONTHS[m - 1]}`,
-        isWeekend: day === 0 || day === 5 || day === 6,
+        isWeekend: day === 5 || day === 6,
       };
     }
 

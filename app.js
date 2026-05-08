@@ -33,7 +33,7 @@ function formatDate(isoDate) {
   return {
     dayName: DAYS[jsDate.getDay()],
     display: `${d} ${MONTHS[m - 1]}`,
-    isWeekend: jsDate.getDay() === 0 || jsDate.getDay() === 5 || jsDate.getDay() === 6,
+    isWeekend: jsDate.getDay() === 5 || jsDate.getDay() === 6,
   };
 }
 
@@ -278,7 +278,7 @@ function updateFilterBadge() {
 function applyFilters() {
   const { dj, venue, from, to } = filters;
   const filtered = allEvents.filter(ev => {
-    if (dj && !ev.otherDJs.some(d => d.toLowerCase().includes(dj))) return false;
+    if (dj && !(ev.otherDJs || []).some(d => d.toLowerCase().includes(dj))) return false;
     if (venue && ev.venue.toLowerCase() !== venue.toLowerCase()) return false;
     if (from && ev.date < from) return false;
     if (to   && ev.date > to)   return false;
