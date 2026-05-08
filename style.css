@@ -487,6 +487,35 @@ a.dj-pill:hover {
   color: white;
 }
 
+/* Lineup expand toggle */
+.lineup-more {
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  border: 1px dashed var(--border);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.lineup-more:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.lineup-more[aria-expanded="true"] {
+  border-style: solid;
+}
+
+.lineup-extra {
+  display: contents;
+}
+
 /* View event link */
 .ticket-link {
   display: inline-block;

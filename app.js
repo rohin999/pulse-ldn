@@ -143,6 +143,8 @@ function updateSortHeaders() {
 }
 
 // ─── Render ───────────────────────────────────────────────────────────────────
+const LINEUP_VISIBLE_LIMIT = 5;
+
 function makePill(name) {
   const slug = djNameToSlug.get(name.toLowerCase());
   const label = escHtml(name);
@@ -150,6 +152,17 @@ function makePill(name) {
     return `<a class="dj-pill" href="dj.html?slug=${encodeURIComponent(slug)}">${label}</a>`;
   }
   return `<span class="dj-pill" data-dj="${label}">${label}</span>`;
+}
+
+function renderLineup(djs) {
+  if (djs.length <= LINEUP_VISIBLE_LIMIT) {
+    return djs.map(makePill).join('');
+  }
+  const head = djs.slice(0, LINEUP_VISIBLE_LIMIT).map(makePill).join('');
+  const rest = djs.slice(LINEUP_VISIBLE_LIMIT).map(makePill).join('');
+  const hiddenCount = djs.length - LINEUP_VISIBLE_LIMIT;
+  return `${head}<span class="lineup-extra" hidden>${rest}</span>` +
+    `<button type="button" class="lineup-more" aria-expanded="false" data-more-count="${hiddenCount}">+${hiddenCount} more</button>`;
 }
 
 function renderTable(events) {
@@ -177,7 +190,7 @@ function renderTable(events) {
     const { dayName, display, isWeekend } = formatDate(ev.date);
     const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
     const uniqueLineup = dedupeLineup(lineup);
-    const pillsHtml = uniqueLineup.map(makePill).join('');
+    const pillsHtml = renderLineup(uniqueLineup);
 
     const eventHtml = ev.ticketUrl
       ? `<a class="ticket-link" href="${escHtml(safeUrl(ev.ticketUrl))}" target="_blank" rel="noopener noreferrer">View event →</a>`
@@ -204,7 +217,7 @@ function renderTable(events) {
       const { dayName, display, isWeekend } = formatDate(ev.date);
       const lineup = (ev.otherDJs && ev.otherDJs.length > 0) ? ev.otherDJs : [ev.djName];
       const uniqueLineup = dedupeLineup(lineup);
-      const pillsHtml = uniqueLineup.map(makePill).join('');
+      const pillsHtml = renderLineup(uniqueLineup);
 
       const footerHtml = ev.ticketUrl
         ? `<div class="event-card-footer"><a class="ticket-link" href="${escHtml(safeUrl(ev.ticketUrl))}" target="_blank" rel="noopener noreferrer">View event →</a></div>`
@@ -227,6 +240,25 @@ function renderTable(events) {
       searchDJ.value = pill.dataset.dj;
       filters.dj = pill.dataset.dj.toLowerCase();
       applyFilters();
+    });
+  });
+
+  // Lineup expand/collapse — toggle hidden extras
+  document.querySelectorAll('.lineup-more').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const extras = btn.parentElement.querySelector('.lineup-extra');
+      if (!extras) return;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        extras.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = `+${btn.dataset.moreCount} more`;
+      } else {
+        extras.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'show less';
+      }
     });
   });
 
