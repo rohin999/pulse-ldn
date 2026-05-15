@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-08T09:55:07.149214+00:00",
+  "lastUpdated": "2026-05-15T10:56:50.538531+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,103 +904,15 @@
   ],
   "events": [
     {
-      "djName": "Marten Lou",
-      "djSlug": "martenlou",
-      "raUrl": "https://ra.co/dj/martenlou",
-      "eventTitle": "MTRNM presents: Marten Lou at Natural History Museum - London",
-      "date": "2026-05-09",
-      "venue": "Natural History Museum London",
-      "ticketUrl": "https://ra.co/events/2405400",
-      "otherDJs": [
-        "Marten Lou",
-        "OSCAAR",
-        "Rahbani"
-      ]
-    },
-    {
-      "djName": "Dixon",
-      "djSlug": "dixon",
-      "raUrl": "https://ra.co/dj/dixon",
-      "eventTitle": "TRI/XON feat AUNTY RAYZOR & Kabeaush\u00e9 (engineered & performed by DIXON & TRIKK)",
-      "date": "2026-05-15",
-      "venue": "The Cause",
-      "ticketUrl": "https://ra.co/events/2397647",
-      "otherDJs": [
-        "TRI/XON",
-        "Aunty Rayzor",
-        "Dixon",
-        "Trikk"
-      ]
-    },
-    {
       "djName": "DESIREE",
       "djSlug": "desiree-rsa",
       "raUrl": "https://ra.co/dj/desiree-rsa",
-      "eventTitle": "DESIREE presents MMiNO",
-      "date": "2026-05-22",
-      "venue": "UNLOCKED",
-      "ticketUrl": "https://ra.co/events/2405743",
-      "otherDJs": [
-        "DESIREE",
-        "DESIREE (RSA)",
-        "Nutty Nys",
-        "Kususa"
-      ]
-    },
-    {
-      "djName": "Black Coffee",
-      "djSlug": "blackcoffee",
-      "raUrl": "https://ra.co/dj/blackcoffee",
-      "eventTitle": "Black Coffee Live with Orchestra",
-      "date": "2026-05-22",
-      "venue": "O2 Arena",
-      "ticketUrl": "https://ra.co/events/2306945",
-      "otherDJs": [
-        "Black Coffee"
-      ]
-    },
-    {
-      "djName": "Vintage Culture",
-      "djSlug": "vintageculture",
-      "raUrl": "https://ra.co/dj/vintageculture",
-      "eventTitle": "fabric: Vintage Culture (All Night Long)",
-      "date": "2026-05-22",
-      "venue": "fabric",
-      "ticketUrl": "https://ra.co/events/2372154",
-      "otherDJs": [
-        "Vintage Culture"
-      ]
-    },
-    {
-      "djName": "Lane 8",
-      "djSlug": "lane8",
-      "raUrl": "https://ra.co/dj/lane8",
-      "eventTitle": "Lane 8 presents TNH TEN - Summer Gathering London",
-      "date": "2026-05-22",
-      "venue": "High Lights - Barking Park",
-      "ticketUrl": "https://ra.co/events/2344491",
-      "otherDJs": [
-        "Lane 8",
-        "Ashibah",
-        "Colyn",
-        "Dusky",
-        "Kidnap",
-        "PARIS (AU)",
-        "Robby East",
-        "MYRNE",
-        "Sultan + Shepard",
-        "Township Rebellion"
-      ]
-    },
-    {
-      "djName": "Seth Troxler",
-      "djSlug": "sethtroxler",
-      "raUrl": "https://ra.co/dj/sethtroxler",
       "eventTitle": "GALA'26",
       "date": "2026-05-22",
       "venue": "Peckham Rye Park",
       "ticketUrl": "https://ra.co/events/2182764",
       "otherDJs": [
+        "DESIREE",
         "ABIMBOLA",
         "Bakey",
         "Beatrice M.",
@@ -1012,6 +924,7 @@
         "CCL",
         "Conducta",
         "D Double E",
+        "DESIREE (RSA)",
         "DJ Fart in the Club",
         "DjRUM",
         "ELLADHC",
@@ -1119,6 +1032,71 @@
       ]
     },
     {
+      "djName": "DESIREE",
+      "djSlug": "desiree-rsa",
+      "raUrl": "https://ra.co/dj/desiree-rsa",
+      "eventTitle": "DESIREE presents MMiNO",
+      "date": "2026-05-22",
+      "venue": "UNLOCKED",
+      "ticketUrl": "https://ra.co/events/2405743",
+      "otherDJs": [
+        "DESIREE",
+        "DESIREE (RSA)",
+        "Nutty Nys",
+        "Kususa"
+      ]
+    },
+    {
+      "djName": "Black Coffee",
+      "djSlug": "blackcoffee",
+      "raUrl": "https://ra.co/dj/blackcoffee",
+      "eventTitle": "Black Coffee Live with Orchestra",
+      "date": "2026-05-22",
+      "venue": "O2 Arena",
+      "ticketUrl": "https://ra.co/events/2306945",
+      "otherDJs": [
+        "Black Coffee"
+      ]
+    },
+    {
+      "djName": "Vintage Culture",
+      "djSlug": "vintageculture",
+      "raUrl": "https://ra.co/dj/vintageculture",
+      "eventTitle": "fabric: Vintage Culture (All Night Long), Script, Tini Gessler, ASHOJU, I Like Wires + more",
+      "date": "2026-05-22",
+      "venue": "fabric",
+      "ticketUrl": "https://ra.co/events/2372154",
+      "otherDJs": [
+        "Vintage Culture",
+        "Script (GE)",
+        "Tini Gessler",
+        "ASHOJU",
+        "I Like Wires",
+        "Summer Ghemati"
+      ]
+    },
+    {
+      "djName": "Lane 8",
+      "djSlug": "lane8",
+      "raUrl": "https://ra.co/dj/lane8",
+      "eventTitle": "Lane 8 presents TNH TEN - Summer Gathering London",
+      "date": "2026-05-22",
+      "venue": "High Lights - Barking Park",
+      "ticketUrl": "https://ra.co/events/2344491",
+      "otherDJs": [
+        "Lane 8",
+        "Ashibah",
+        "Colyn",
+        "Dusky",
+        "Kidnap",
+        "PARIS (AU)",
+        "Robby East",
+        "MYRNE",
+        "Sultan + Shepard",
+        "Township Rebellion"
+      ]
+    },
+    {
       "djName": "Jan Blomqvist",
       "djSlug": "janblomqvist",
       "raUrl": "https://ra.co/dj/janblomqvist",
@@ -1132,16 +1110,17 @@
         "Henri Bergmann",
         "Jan Blomqvist",
         "KREAM",
-        "Korolova"
+        "Korolova",
+        "Redfreya"
       ]
     },
     {
       "djName": "DaCapo",
       "djSlug": "dacapo",
       "raUrl": "https://ra.co/dj/dacapo",
-      "eventTitle": "Da Capo, Sef Kombo at Outernet",
+      "eventTitle": "Da Capo, Sef Kombo at Theata",
       "date": "2026-06-05",
-      "venue": "HERE",
+      "venue": "Theata",
       "ticketUrl": "https://ra.co/events/2401480",
       "otherDJs": [
         "DaCapo",
