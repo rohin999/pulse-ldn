@@ -262,6 +262,10 @@ def main():
     all_events.sort(key=lambda e: e["date"])
     all_profiles.sort(key=lambda d: d["name"].lower())
 
+    if not all_profiles:
+        print("\nError: no DJ profiles fetched — refusing to overwrite data file.", file=sys.stderr)
+        sys.exit(1)
+
     os.makedirs("data", exist_ok=True)
     output = {
         "lastUpdated": datetime.now(timezone.utc).isoformat(),
