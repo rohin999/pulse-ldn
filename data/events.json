@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-29T14:15:32.645495+00:00",
+  "lastUpdated": "2026-06-05T11:59:28.243457+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -923,7 +923,7 @@
       "djName": "CamelPhat",
       "djSlug": "camelphat",
       "raUrl": "https://ra.co/dj/camelphat",
-      "eventTitle": "CamelPhat, Hot Since 82, Josh Gigante, Vomee, Samantha Loveridge",
+      "eventTitle": "CamelPhat, Hot Since 82, Josh Gigante, Vomee, Samantha Loveridge, Yamagucci",
       "date": "2026-06-05",
       "venue": "fabric",
       "ticketUrl": "https://ra.co/events/2419618",
@@ -932,7 +932,8 @@
         "Josh Gigante",
         "Vomee",
         "Hot Since 82",
-        "Samantha Loveridge"
+        "Samantha Loveridge",
+        "Yamagucci"
       ]
     },
     {
@@ -1064,8 +1065,8 @@
         "Tiesto",
         "swim",
         "Massano",
-        "Faster Horses",
         "Evian Christ",
+        "Faster Horses",
         "Paige Tomlinson",
         "THELMA",
         "Megra"
@@ -1295,6 +1296,30 @@
         "Franky Rizardo",
         "Locky",
         "Delilah"
+      ]
+    },
+    {
+      "djName": "ANOTR",
+      "djSlug": "anotr",
+      "raUrl": "https://ra.co/dj/anotr",
+      "eventTitle": "ANOTR at Ally Pally",
+      "date": "2026-09-17",
+      "venue": "Alexandra Palace",
+      "ticketUrl": "https://ra.co/events/2461603",
+      "otherDJs": [
+        "ANOTR"
+      ]
+    },
+    {
+      "djName": "ANOTR",
+      "djSlug": "anotr",
+      "raUrl": "https://ra.co/dj/anotr",
+      "eventTitle": "ANOTR at Ally Pally",
+      "date": "2026-09-18",
+      "venue": "Alexandra Palace",
+      "ticketUrl": "https://ra.co/events/2456885",
+      "otherDJs": [
+        "ANOTR"
       ]
     }
   ]
