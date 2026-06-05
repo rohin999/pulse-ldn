@@ -2,7 +2,7 @@ name: Fetch DJ data
 
 on:
   schedule:
-    - cron: '0 8 * * 5'  # Every Friday at 9am BST (UTC+1)
+    - cron: '0 3 * * 5'  # Every Friday at 9am BST (UTC+1)
   workflow_dispatch:       # Allow manual trigger from GitHub UI
 
 jobs:
