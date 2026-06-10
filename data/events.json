@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-05T11:59:28.243457+00:00",
+  "lastUpdated": "2026-06-10T07:26:53.354715+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,45 +904,12 @@
   ],
   "events": [
     {
-      "djName": "DaCapo",
-      "djSlug": "dacapo",
-      "raUrl": "https://ra.co/dj/dacapo",
-      "eventTitle": "Da Capo, Sef Kombo at Theata",
-      "date": "2026-06-05",
-      "venue": "Theata",
-      "ticketUrl": "https://ra.co/events/2401480",
-      "otherDJs": [
-        "DaCapo",
-        "Da Capo",
-        "Sef Kombo",
-        "Leeda",
-        "OneThabs"
-      ]
-    },
-    {
-      "djName": "CamelPhat",
-      "djSlug": "camelphat",
-      "raUrl": "https://ra.co/dj/camelphat",
-      "eventTitle": "CamelPhat, Hot Since 82, Josh Gigante, Vomee, Samantha Loveridge, Yamagucci",
-      "date": "2026-06-05",
-      "venue": "fabric",
-      "ticketUrl": "https://ra.co/events/2419618",
-      "otherDJs": [
-        "CamelPhat",
-        "Josh Gigante",
-        "Vomee",
-        "Hot Since 82",
-        "Samantha Loveridge",
-        "Yamagucci"
-      ]
-    },
-    {
       "djName": "Ajna",
       "djSlug": "ajna",
       "raUrl": "https://ra.co/dj/ajna",
       "eventTitle": "Labyrinth Block Party: Mahmut Orhan extended set, AJNA, Fiona Kraft",
       "date": "2026-06-13",
-      "venue": "TBA - EAST LONDON",
+      "venue": "TBA - Ives Road, East London",
       "ticketUrl": "https://ra.co/events/2383215",
       "otherDJs": [
         "Ajna",
@@ -1076,7 +1043,7 @@
       "djName": "Ajna",
       "djSlug": "ajna",
       "raUrl": "https://ra.co/dj/ajna",
-      "eventTitle": "fabric: Emmanuel Jal, AJNA, Mal\u00f3ne Morez",
+      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Mal\u00f3ne Morez",
       "date": "2026-07-17",
       "venue": "fabric",
       "ticketUrl": "https://ra.co/events/2424664",
