@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-10T07:26:53.354715+00:00",
+  "lastUpdated": "2026-06-17T08:50:05.621373+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,25 +904,6 @@
   ],
   "events": [
     {
-      "djName": "Ajna",
-      "djSlug": "ajna",
-      "raUrl": "https://ra.co/dj/ajna",
-      "eventTitle": "Labyrinth Block Party: Mahmut Orhan extended set, AJNA, Fiona Kraft",
-      "date": "2026-06-13",
-      "venue": "TBA - Ives Road, East London",
-      "ticketUrl": "https://ra.co/events/2383215",
-      "otherDJs": [
-        "Ajna",
-        "Mahmut Orhan",
-        "AJNA",
-        "Fiona Kraft",
-        "Julia Sandstorm",
-        "Louis Bekk",
-        "Nick Castle",
-        "People Like Us (3)"
-      ]
-    },
-    {
       "djName": "Enoo Napa",
       "djSlug": "enoonapa",
       "raUrl": "https://ra.co/dj/enoonapa",
@@ -1043,14 +1024,17 @@
       "djName": "Ajna",
       "djSlug": "ajna",
       "raUrl": "https://ra.co/dj/ajna",
-      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Mal\u00f3ne Morez",
+      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Mal\u00f3ne Morez, Sam Karam + more",
       "date": "2026-07-17",
       "venue": "fabric",
       "ticketUrl": "https://ra.co/events/2424664",
       "otherDJs": [
         "Ajna",
         "Emmanuel Jal",
-        "AJNA"
+        "AJNA",
+        "Umaedo",
+        "Sam Karam",
+        "Rahbani"
       ]
     },
     {
