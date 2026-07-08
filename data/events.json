@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-01T07:32:11.009235+00:00",
+  "lastUpdated": "2026-07-08T06:10:31.621019+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -964,6 +964,7 @@
         "Tiesto",
         "SWIM (AU)",
         "Massano",
+        "MILLE",
         "Evian Christ",
         "Faster Horses",
         "Paige Tomlinson",
@@ -983,6 +984,7 @@
         "Ajna",
         "Emmanuel Jal",
         "AJNA",
+        "Cris Cioata",
         "Umaedo",
         "Sam Karam",
         "Rahbani"
@@ -1130,6 +1132,18 @@
         "Samm (BE)",
         "TSHA",
         "Nick Castle"
+      ]
+    },
+    {
+      "djName": "Adriatique",
+      "djSlug": "adriatique",
+      "raUrl": "https://ra.co/dj/adriatique",
+      "eventTitle": "Adriatique presents X - Afterparty",
+      "date": "2026-08-08",
+      "venue": "fabric",
+      "ticketUrl": "https://ra.co/events/2479397",
+      "otherDJs": [
+        "Adriatique"
       ]
     },
     {
