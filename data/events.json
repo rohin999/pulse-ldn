@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-08T06:10:31.621019+00:00",
+  "lastUpdated": "2026-07-15T05:50:03.089161+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,79 +904,10 @@
   ],
   "events": [
     {
-      "djName": "John Summit",
-      "djSlug": "johnsummit",
-      "raUrl": "https://ra.co/dj/johnsummit",
-      "eventTitle": "John Summit presents Experts Only UK Debut",
-      "date": "2026-07-11",
-      "venue": "Tofte Manor",
-      "ticketUrl": "https://ra.co/events/2321174",
-      "otherDJs": [
-        "John Summit"
-      ]
-    },
-    {
-      "djName": "FISHER",
-      "djSlug": "fisheroz",
-      "raUrl": "https://ra.co/dj/fisheroz",
-      "eventTitle": "FISHER with Gordo, Denis Sulta b2b KILIMAJARO, Oden & Fatzo (Live)",
-      "date": "2026-07-11",
-      "venue": "Silverworks Island",
-      "ticketUrl": "https://ra.co/events/2351245",
-      "otherDJs": [
-        "FISHER",
-        "Gordo (1)",
-        "Denis Sulta",
-        "KILIMANJARO",
-        "Oden",
-        "Fatzo",
-        "Arielle Free",
-        "Antares",
-        "Andrea Oliva",
-        "SYREETA",
-        "Enzo is Burning",
-        "Tini Gessler",
-        "Little Fritter",
-        "Sasha GiGi"
-      ]
-    },
-    {
-      "djName": "John Summit",
-      "djSlug": "johnsummit",
-      "raUrl": "https://ra.co/dj/johnsummit",
-      "eventTitle": "John Summit presents Experts Only Added Date",
-      "date": "2026-07-12",
-      "venue": "Tofte Manor",
-      "ticketUrl": "https://ra.co/events/2326234",
-      "otherDJs": [
-        "John Summit"
-      ]
-    },
-    {
-      "djName": "Massano",
-      "djSlug": "massano",
-      "raUrl": "https://ra.co/dj/massano",
-      "eventTitle": "Ti\u00ebsto with Massano, Pegassi, swim, Millie Cotton and many more",
-      "date": "2026-07-12",
-      "venue": "Silverworks Island",
-      "ticketUrl": "https://ra.co/events/2392704",
-      "otherDJs": [
-        "Tiesto",
-        "SWIM (AU)",
-        "Massano",
-        "MILLE",
-        "Evian Christ",
-        "Faster Horses",
-        "Paige Tomlinson",
-        "THELMA",
-        "Megra"
-      ]
-    },
-    {
       "djName": "Ajna",
       "djSlug": "ajna",
       "raUrl": "https://ra.co/dj/ajna",
-      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Mal\u00f3ne Morez, Sam Karam + more",
+      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Sam Karam, OSCAAR, Cris Cioata, Umaedo, Rahbani",
       "date": "2026-07-17",
       "venue": "fabric",
       "ticketUrl": "https://ra.co/events/2424664",
@@ -986,8 +917,24 @@
         "AJNA",
         "Cris Cioata",
         "Umaedo",
+        "OSCAAR",
         "Sam Karam",
         "Rahbani"
+      ]
+    },
+    {
+      "djName": "Zakes Bantwini",
+      "djSlug": "zakesbantwini",
+      "raUrl": "https://ra.co/dj/zakesbantwini",
+      "eventTitle": "Nelson Mandela Day Trafalgar Square London",
+      "date": "2026-07-18",
+      "venue": "Trafalgar Square",
+      "ticketUrl": "https://ra.co/events/2488815",
+      "otherDJs": [
+        "Zakes Bantwini",
+        "Sun El Musician",
+        "Thakzin",
+        "Mi Casa"
       ]
     },
     {
@@ -1238,6 +1185,19 @@
       "ticketUrl": "https://ra.co/events/2456885",
       "otherDJs": [
         "ANOTR"
+      ]
+    },
+    {
+      "djName": "DESIREE",
+      "djSlug": "desiree-rsa",
+      "raUrl": "https://ra.co/dj/desiree-rsa",
+      "eventTitle": "KOKO Electronic: DESIREE",
+      "date": "2026-09-26",
+      "venue": "KOKO",
+      "ticketUrl": "https://ra.co/events/2485513",
+      "otherDJs": [
+        "DESIREE",
+        "DESIREE (RSA)"
       ]
     }
   ]
