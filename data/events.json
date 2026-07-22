@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-15T05:50:03.089161+00:00",
+  "lastUpdated": "2026-07-22T06:07:46.935569+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,57 +904,6 @@
   ],
   "events": [
     {
-      "djName": "Ajna",
-      "djSlug": "ajna",
-      "raUrl": "https://ra.co/dj/ajna",
-      "eventTitle": "MTRNM: Emmanuel Jal, AJNA, Sam Karam, OSCAAR, Cris Cioata, Umaedo, Rahbani",
-      "date": "2026-07-17",
-      "venue": "fabric",
-      "ticketUrl": "https://ra.co/events/2424664",
-      "otherDJs": [
-        "Ajna",
-        "Emmanuel Jal",
-        "AJNA",
-        "Cris Cioata",
-        "Umaedo",
-        "OSCAAR",
-        "Sam Karam",
-        "Rahbani"
-      ]
-    },
-    {
-      "djName": "Zakes Bantwini",
-      "djSlug": "zakesbantwini",
-      "raUrl": "https://ra.co/dj/zakesbantwini",
-      "eventTitle": "Nelson Mandela Day Trafalgar Square London",
-      "date": "2026-07-18",
-      "venue": "Trafalgar Square",
-      "ticketUrl": "https://ra.co/events/2488815",
-      "otherDJs": [
-        "Zakes Bantwini",
-        "Sun El Musician",
-        "Thakzin",
-        "Mi Casa"
-      ]
-    },
-    {
-      "djName": "Seth Troxler",
-      "djSlug": "sethtroxler",
-      "raUrl": "https://ra.co/dj/sethtroxler",
-      "eventTitle": "fabric: Seth Troxler, Magda B2B Mari.te, Matias Aguayo (Live), RSquared, Jo\u00eblla Jackson",
-      "date": "2026-07-18",
-      "venue": "fabric",
-      "ticketUrl": "https://ra.co/events/2424676",
-      "otherDJs": [
-        "Seth Troxler",
-        "Magda",
-        "Mari.te",
-        "Matias Aguayo",
-        "RSquared",
-        "Jo\u00eblla Jackson"
-      ]
-    },
-    {
       "djName": "Maz",
       "djSlug": "mazbr",
       "raUrl": "https://ra.co/dj/mazbr",
@@ -1198,6 +1147,18 @@
       "otherDJs": [
         "DESIREE",
         "DESIREE (RSA)"
+      ]
+    },
+    {
+      "djName": "CamelPhat",
+      "djSlug": "camelphat",
+      "raUrl": "https://ra.co/dj/camelphat",
+      "eventTitle": "CamelPhat",
+      "date": "2026-10-24",
+      "venue": "Ironworks",
+      "ticketUrl": "https://ra.co/events/2475520",
+      "otherDJs": [
+        "CamelPhat"
       ]
     }
   ]
