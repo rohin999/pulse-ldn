@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T06:07:46.935569+00:00",
+  "lastUpdated": "2026-07-29T06:09:57.872524+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -903,41 +903,6 @@
     }
   ],
   "events": [
-    {
-      "djName": "Maz",
-      "djSlug": "mazbr",
-      "raUrl": "https://ra.co/dj/mazbr",
-      "eventTitle": "Dawn Patrol Open Air: Maz & Antdot extended set",
-      "date": "2026-07-24",
-      "venue": "The Cause",
-      "ticketUrl": "https://ra.co/events/2435203",
-      "otherDJs": [
-        "Maz",
-        "Maz (BR)",
-        "Antdot"
-      ]
-    },
-    {
-      "djName": "Miss Monique",
-      "djSlug": "missmonique",
-      "raUrl": "https://ra.co/dj/missmonique",
-      "eventTitle": "Junction 2: Adam Beyer, Miss Monique, Indo Warehouse",
-      "date": "2026-07-26",
-      "venue": "Boston Manor Park",
-      "ticketUrl": "https://ra.co/events/2363329",
-      "otherDJs": [
-        "Adam Beyer",
-        "Miss Monique",
-        "Franky Wah",
-        "Aaron Hibell",
-        "Avangart Tabldot",
-        "Tripolism",
-        "Koti\u0113r",
-        "Julia Linkogel",
-        "Carina Lawrence",
-        "Mia Aurora"
-      ]
-    },
     {
       "djName": "Berlioz",
       "djSlug": "berlioz",
