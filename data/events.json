@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-29T06:09:57.872524+00:00",
+  "lastUpdated": "2026-08-05T06:05:29.455656+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,62 +904,6 @@
   ],
   "events": [
     {
-      "djName": "Berlioz",
-      "djSlug": "berlioz",
-      "raUrl": "https://ra.co/dj/berlioz",
-      "eventTitle": "berlioz presents deep in it",
-      "date": "2026-08-01",
-      "venue": "Finsbury Park",
-      "ticketUrl": "https://ra.co/events/2315331",
-      "otherDJs": [
-        "Berlioz",
-        "berlioz",
-        "Vegyn",
-        "nimino",
-        "Aroop Roy",
-        "Mr Scruff",
-        "Donna Leake",
-        "Suze Ij\u00f3",
-        "Shubostar"
-      ]
-    },
-    {
-      "djName": "Jimi Jules",
-      "djSlug": "jimijules",
-      "raUrl": "https://ra.co/dj/jimijules",
-      "eventTitle": "Innervisions LONDON",
-      "date": "2026-08-01",
-      "venue": "Boston Manor Park",
-      "ticketUrl": "https://ra.co/events/2373267",
-      "otherDJs": [
-        "\u00c2me",
-        "Dixon",
-        "Howling",
-        "Ivory",
-        "JAMIIE",
-        "Jimi Jules",
-        "Julya Karma",
-        "RY X",
-        "Sama' Abdulhadi",
-        "Trikk"
-      ]
-    },
-    {
-      "djName": "Peggy Gou",
-      "djSlug": "peggygou",
-      "raUrl": "https://ra.co/dj/peggygou",
-      "eventTitle": "Peggy Gou on the Thames",
-      "date": "2026-08-02",
-      "venue": "Old Royal Naval College",
-      "ticketUrl": "https://ra.co/events/2361236",
-      "otherDJs": [
-        "Peggy Gou",
-        "Prospa",
-        "MPH (1)",
-        "Kelly Lee Owens"
-      ]
-    },
-    {
       "djName": "Sammy Virji",
       "djSlug": "sammyvirji",
       "raUrl": "https://ra.co/dj/sammyvirji",
@@ -1081,7 +1025,7 @@
       "djName": "ANOTR",
       "djSlug": "anotr",
       "raUrl": "https://ra.co/dj/anotr",
-      "eventTitle": "ANOTR at Ally Pally",
+      "eventTitle": "Labyrinth presents: ANOTR at Ally Pally",
       "date": "2026-09-17",
       "venue": "Alexandra Palace",
       "ticketUrl": "https://ra.co/events/2461603",
@@ -1093,12 +1037,31 @@
       "djName": "ANOTR",
       "djSlug": "anotr",
       "raUrl": "https://ra.co/dj/anotr",
-      "eventTitle": "ANOTR at Ally Pally",
+      "eventTitle": "Labyrinth presents: ANOTR at Ally Pally",
       "date": "2026-09-18",
       "venue": "Alexandra Palace",
       "ticketUrl": "https://ra.co/events/2456885",
       "otherDJs": [
         "ANOTR"
+      ]
+    },
+    {
+      "djName": "Ankhoi",
+      "djSlug": "ankhoi",
+      "raUrl": "https://ra.co/dj/ankhoi",
+      "eventTitle": "fabric: K\u00f6lsch, Ankho\u00ef, Laolu, Sef Kombo, Mayssa, Leeda, Teaser, Jimono B2B The Almanac",
+      "date": "2026-09-25",
+      "venue": "fabric",
+      "ticketUrl": "https://ra.co/events/2471513",
+      "otherDJs": [
+        "Ankhoi",
+        "Kolsch",
+        "Ankho\u00ef",
+        "Laolu",
+        "Mayssa",
+        "Sef Kombo",
+        "Leeda",
+        "The Almanac"
       ]
     },
     {
@@ -1111,7 +1074,29 @@
       "ticketUrl": "https://ra.co/events/2485513",
       "otherDJs": [
         "DESIREE",
-        "DESIREE (RSA)"
+        "DESIREE (RSA)",
+        "Benji B",
+        "Charisse C"
+      ]
+    },
+    {
+      "djName": "DJ Tennis",
+      "djSlug": "djtennis",
+      "raUrl": "https://ra.co/dj/djtennis",
+      "eventTitle": "Labyrinth presents: 12 hours of Life & Death at FOLD",
+      "date": "2026-10-09",
+      "venue": "FOLD",
+      "ticketUrl": "https://ra.co/events/2500682",
+      "otherDJs": [
+        "Andre Zimmer",
+        "Ashee",
+        "Bambounou",
+        "DJ Tennis",
+        "Jen Cardini",
+        "Kim Ann Foxman",
+        "M-High",
+        "Rudy With a Hoodie",
+        "Tiga"
       ]
     },
     {
