@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05T06:05:29.455656+00:00",
+  "lastUpdated": "2026-08-12T05:09:45.536213+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,108 +904,6 @@
   ],
   "events": [
     {
-      "djName": "Sammy Virji",
-      "djSlug": "sammyvirji",
-      "raUrl": "https://ra.co/dj/sammyvirji",
-      "eventTitle": "krankbrother presents: Sammy Virji",
-      "date": "2026-08-07",
-      "venue": "Finsbury Park",
-      "ticketUrl": "https://ra.co/events/2307748",
-      "otherDJs": [
-        "Sammy Virji",
-        "MALUGI",
-        "Oppidan",
-        "Pretty Girl",
-        "ESC (5)",
-        "Jaguar",
-        "Soul Mass Transit System",
-        "Club Angel"
-      ]
-    },
-    {
-      "djName": "Samm",
-      "djSlug": "sammbe",
-      "raUrl": "https://ra.co/dj/sammbe",
-      "eventTitle": "Adriatique present X on the Thames",
-      "date": "2026-08-08",
-      "venue": "Old Royal Naval College",
-      "ticketUrl": "https://ra.co/events/2355831",
-      "otherDJs": [
-        "Samm",
-        "Adriatique",
-        "Mahmut Orhan",
-        "Samm (BE)",
-        "TSHA",
-        "Nick Castle"
-      ]
-    },
-    {
-      "djName": "Adriatique",
-      "djSlug": "adriatique",
-      "raUrl": "https://ra.co/dj/adriatique",
-      "eventTitle": "Adriatique presents X - Afterparty",
-      "date": "2026-08-08",
-      "venue": "fabric",
-      "ticketUrl": "https://ra.co/events/2479397",
-      "otherDJs": [
-        "Adriatique"
-      ]
-    },
-    {
-      "djName": "&ME",
-      "djSlug": "me",
-      "raUrl": "https://ra.co/dj/me",
-      "eventTitle": "krankbrother presents: Adam Port + &ME",
-      "date": "2026-08-09",
-      "venue": "Finsbury Park",
-      "ticketUrl": "https://ra.co/events/2315321",
-      "otherDJs": [
-        "Adam Port",
-        "&ME"
-      ]
-    },
-    {
-      "djName": "Dennis Cruz",
-      "djSlug": "denniscruz",
-      "raUrl": "https://ra.co/dj/denniscruz",
-      "eventTitle": "Eastern Electrics 2026",
-      "date": "2026-08-09",
-      "venue": "Burgess Park",
-      "ticketUrl": "https://ra.co/events/2352117",
-      "otherDJs": [
-        "The Martinez Brothers",
-        "East End Dubs",
-        "Joseph Capriati",
-        "SOSA (UK)",
-        "Mau P",
-        "Dennis Cruz",
-        "Groove Armada",
-        "Danielle",
-        "Dean Turnley",
-        "Theon Bower",
-        "Jamback",
-        "Locklead",
-        "Mella Dee",
-        "Reeshy",
-        "Truly Madly",
-        "Phill de Janeiro",
-        "Benji King",
-        "Ella Knight",
-        "Jude Lenihan",
-        "Patrick Topping",
-        "Skream",
-        "Obskur",
-        "Marsolo",
-        "La La",
-        "Scarlett O'Malley",
-        "Notion",
-        "Morgan Seatree",
-        "JACK MARLOW",
-        "Zed Bias",
-        "Hayley Zalassi"
-      ]
-    },
-    {
       "djName": "Michael Bibi",
       "djSlug": "michaelbibi",
       "raUrl": "https://ra.co/dj/michaelbibi",
@@ -1100,6 +998,18 @@
       ]
     },
     {
+      "djName": "Eric Prydz",
+      "djSlug": "ericprydz",
+      "raUrl": "https://ra.co/dj/ericprydz",
+      "eventTitle": "GASWRX presents ERIC PRYDZ",
+      "date": "2026-10-16",
+      "venue": "Gaswrx Birmingham",
+      "ticketUrl": "https://ra.co/events/2507054",
+      "otherDJs": [
+        "Eric Prydz"
+      ]
+    },
+    {
       "djName": "CamelPhat",
       "djSlug": "camelphat",
       "raUrl": "https://ra.co/dj/camelphat",
@@ -1109,6 +1019,21 @@
       "ticketUrl": "https://ra.co/events/2475520",
       "otherDJs": [
         "CamelPhat"
+      ]
+    },
+    {
+      "djName": "\u00c2me",
+      "djSlug": "ame",
+      "raUrl": "https://ra.co/dj/ame",
+      "eventTitle": "\u00c2me DJ '5 hours set', Patrice Baunel all night long",
+      "date": "2026-12-12",
+      "venue": "E1",
+      "ticketUrl": "https://ra.co/events/2507084",
+      "otherDJs": [
+        "\u00c2me",
+        "Patrice B\u00e4umel",
+        "ABEL (UK)",
+        "Roxie Li"
       ]
     }
   ]
