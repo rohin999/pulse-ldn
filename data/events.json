@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-12T05:09:45.536213+00:00",
+  "lastUpdated": "2026-08-19T04:07:28.770937+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,22 +904,6 @@
   ],
   "events": [
     {
-      "djName": "Michael Bibi",
-      "djSlug": "michaelbibi",
-      "raUrl": "https://ra.co/dj/michaelbibi",
-      "eventTitle": "Michael Bibi on the Thames",
-      "date": "2026-08-16",
-      "venue": "Old Royal Naval College",
-      "ticketUrl": "https://ra.co/events/2366706",
-      "otherDJs": [
-        "Michael Bibi",
-        "Seth Troxler",
-        "Franky Rizardo",
-        "Locky",
-        "Delilah"
-      ]
-    },
-    {
       "djName": "ANOTR",
       "djSlug": "anotr",
       "raUrl": "https://ra.co/dj/anotr",
@@ -998,6 +982,18 @@
       ]
     },
     {
+      "djName": "The Martinez Brothers",
+      "djSlug": "themartinezbros",
+      "raUrl": "https://ra.co/dj/themartinezbros",
+      "eventTitle": "fabric: The Martinez Brothers (6 Hour Set), Sarahrey",
+      "date": "2026-10-11",
+      "venue": "fabric",
+      "ticketUrl": "https://ra.co/events/2506210",
+      "otherDJs": [
+        "The Martinez Brothers"
+      ]
+    },
+    {
       "djName": "Eric Prydz",
       "djSlug": "ericprydz",
       "raUrl": "https://ra.co/dj/ericprydz",
@@ -1022,10 +1018,23 @@
       ]
     },
     {
+      "djName": "MK",
+      "djSlug": "marckinchen",
+      "raUrl": "https://ra.co/dj/marckinchen",
+      "eventTitle": "elrow Horroween Festival with MK to be announced",
+      "date": "2026-10-31",
+      "venue": "DRUMSHEDS",
+      "ticketUrl": "https://ra.co/events/2475993",
+      "otherDJs": [
+        "MK",
+        "Marc Kinchen"
+      ]
+    },
+    {
       "djName": "\u00c2me",
       "djSlug": "ame",
       "raUrl": "https://ra.co/dj/ame",
-      "eventTitle": "\u00c2me DJ '5 hours set', Patrice Baunel all night long",
+      "eventTitle": "\u00c2me DJ '5 hours set', Patrice B\u00e4umel all night long",
       "date": "2026-12-12",
       "venue": "E1",
       "ticketUrl": "https://ra.co/events/2507084",
