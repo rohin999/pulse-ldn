@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-19T04:07:28.770937+00:00",
+  "lastUpdated": "2026-08-26T04:12:00.491228+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -962,6 +962,24 @@
       ]
     },
     {
+      "djName": "Seth Troxler",
+      "djSlug": "sethtroxler",
+      "raUrl": "https://ra.co/dj/sethtroxler",
+      "eventTitle": "Jamie Jones presents: Voyager",
+      "date": "2026-10-03",
+      "venue": "Ironworks",
+      "ticketUrl": "https://ra.co/events/2475437",
+      "otherDJs": [
+        "Jamie Jones",
+        "Seth Troxler",
+        "Adam Ten",
+        "Manda Moor",
+        "Goosey",
+        "FLORENTIA",
+        "Ali Love"
+      ]
+    },
+    {
       "djName": "DJ Tennis",
       "djSlug": "djtennis",
       "raUrl": "https://ra.co/dj/djtennis",
@@ -1018,16 +1036,64 @@
       ]
     },
     {
+      "djName": "Caiiro",
+      "djSlug": "caiiro",
+      "raUrl": "https://ra.co/dj/caiiro",
+      "eventTitle": "Labyrinth presents: Caiiro x Da Capo x Enoo Napa Halloween B3B",
+      "date": "2026-10-31",
+      "venue": "The Roundhouse",
+      "ticketUrl": "https://ra.co/events/2519849",
+      "otherDJs": [
+        "Caiiro",
+        "Da Capo",
+        "Enoo Napa",
+        "DaCapo"
+      ]
+    },
+    {
       "djName": "MK",
       "djSlug": "marckinchen",
       "raUrl": "https://ra.co/dj/marckinchen",
-      "eventTitle": "elrow Horroween Festival with MK to be announced",
+      "eventTitle": "elrow Horroween Festival with MK, LB aka LABAT, Sarah Story",
       "date": "2026-10-31",
       "venue": "DRUMSHEDS",
       "ticketUrl": "https://ra.co/events/2475993",
       "otherDJs": [
         "MK",
-        "Marc Kinchen"
+        "AAT (NL)",
+        "Arielle Free",
+        "ASLO",
+        "Danny Howard",
+        "Diffrent",
+        "Emma B",
+        "Fish56Octagon",
+        "hitty",
+        "lau.ra",
+        "LB aka LABAT",
+        "Marc Kinchen",
+        "Patrick Topping",
+        "Sarah Story",
+        "Wade",
+        "Ayce & Spirit Of House",
+        "branqueeno",
+        "Bustin' Loose",
+        "Magnolia",
+        "Caio Cenci",
+        "Poppi"
+      ]
+    },
+    {
+      "djName": "Ajna",
+      "djSlug": "ajna",
+      "raUrl": "https://ra.co/dj/ajna",
+      "eventTitle": "Labyrinth presents: Magnifik Music - Samm & AJNA All Night Long",
+      "date": "2026-12-11",
+      "venue": "Outernet Live",
+      "ticketUrl": "https://ra.co/events/2518386",
+      "otherDJs": [
+        "Ajna",
+        "Samm",
+        "AJNA"
       ]
     },
     {
@@ -1042,7 +1108,9 @@
         "\u00c2me",
         "Patrice B\u00e4umel",
         "ABEL (UK)",
-        "Roxie Li"
+        "Roxie Li",
+        "Redfreya",
+        "Motip White"
       ]
     }
   ]
