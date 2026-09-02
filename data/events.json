@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-26T04:12:00.491228+00:00",
+  "lastUpdated": "2026-09-02T07:53:27.655403+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -904,6 +904,18 @@
   ],
   "events": [
     {
+      "djName": "Zakes Bantwini",
+      "djSlug": "zakesbantwini",
+      "raUrl": "https://ra.co/dj/zakesbantwini",
+      "eventTitle": "77: Zakes Bantwini",
+      "date": "2026-09-12",
+      "venue": "77",
+      "ticketUrl": "https://ra.co/events/2516745",
+      "otherDJs": [
+        "Zakes Bantwini"
+      ]
+    },
+    {
       "djName": "ANOTR",
       "djSlug": "anotr",
       "raUrl": "https://ra.co/dj/anotr",
@@ -931,7 +943,7 @@
       "djName": "Ankhoi",
       "djSlug": "ankhoi",
       "raUrl": "https://ra.co/dj/ankhoi",
-      "eventTitle": "fabric: K\u00f6lsch, Ankho\u00ef, Laolu, Sef Kombo, Mayssa, Leeda, Teaser, Jimono B2B The Almanac",
+      "eventTitle": "fabric: K\u00f6lsch, Ankho\u00ef, Laolu, Sef Kombo, Mayssa, Leeda, Teaser, J\u00efmono B2B The Almanac",
       "date": "2026-09-25",
       "venue": "fabric",
       "ticketUrl": "https://ra.co/events/2471513",
@@ -943,6 +955,7 @@
         "Mayssa",
         "Sef Kombo",
         "Leeda",
+        "J\u00cfMONO",
         "The Almanac"
       ]
     },
