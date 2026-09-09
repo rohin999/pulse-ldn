@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T07:53:27.655403+00:00",
+  "lastUpdated": "2026-09-09T08:07:34.529340+00:00",
   "djs": [
     {
       "name": "&ME",
@@ -912,7 +912,9 @@
       "venue": "77",
       "ticketUrl": "https://ra.co/events/2516745",
       "otherDJs": [
-        "Zakes Bantwini"
+        "Zakes Bantwini",
+        "Via Seri",
+        "N\u00e9sa Thea"
       ]
     },
     {
@@ -1025,6 +1027,18 @@
       ]
     },
     {
+      "djName": "Carlita",
+      "djSlug": "carlita",
+      "raUrl": "https://ra.co/dj/carlita",
+      "eventTitle": "Labyrinth presents: Carlita TELEPATHY Album Pre-release Listening Party",
+      "date": "2026-10-16",
+      "venue": "UNLOCKED",
+      "ticketUrl": "https://ra.co/events/2529459",
+      "otherDJs": [
+        "Carlita"
+      ]
+    },
+    {
       "djName": "Eric Prydz",
       "djSlug": "ericprydz",
       "raUrl": "https://ra.co/dj/ericprydz",
@@ -1093,6 +1107,27 @@
         "Magnolia",
         "Caio Cenci",
         "Poppi"
+      ]
+    },
+    {
+      "djName": "Miss Monique",
+      "djSlug": "missmonique",
+      "raUrl": "https://ra.co/dj/missmonique",
+      "eventTitle": "Resistance London with Paul Kalkbrenner, Miss Monique, K\u00f6lsch, Sven V\u00e4th and many more",
+      "date": "2026-12-05",
+      "venue": "DRUMSHEDS",
+      "ticketUrl": "https://ra.co/events/2531137",
+      "otherDJs": [
+        "Paul Kalkbrenner",
+        "Miss Monique",
+        "Deer Jade",
+        "ANNA",
+        "Qrion",
+        "Sven Vath",
+        "Roman Fl\u00fcgel",
+        "Gerd Janson",
+        "Dana Ruh",
+        "FAE (3)"
       ]
     },
     {
